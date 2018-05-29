@@ -11,10 +11,18 @@ namespace Algo
         public int data;
         public BinaryNode L;
         public BinaryNode R;
+
+        private BinaryNode() {
+        }
         
         public BinaryNode(int d)
         {
             data = d;
+        }
+        
+
+        public void Add(IEnumerable<int> arr) {
+            foreach (var d in arr) { Add(d); }
         }
 
         public void Add(int d)

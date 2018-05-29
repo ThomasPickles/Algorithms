@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algo
 {
+
+    // a change
     public class Node<T> : object where T : struct
     {
         public T data;

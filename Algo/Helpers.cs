@@ -27,5 +27,14 @@ namespace Algo
       
         }
 
+        public static BinaryNode CreateTree(IEnumerable<int> arr)
+        {
+            var first = arr.FirstOrDefault();
+            var rest = arr.Skip(1).ToArray();
+            var tree = new BinaryNode(first);
+            tree.Add(rest);
+            return tree;
+        }
+
     }
 }

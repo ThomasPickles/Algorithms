@@ -6,7 +6,7 @@ using FluentAssertions;
 namespace Algo.Test
 {
     [TestClass]
-    public class LinkedLists
+    public class LinkedListTests
     {
 
         [TestMethod]
