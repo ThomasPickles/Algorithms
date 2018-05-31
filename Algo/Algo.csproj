@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryNode.cs" />
+    <Compile Include="BinaryNodeExtensions.cs" />
+    <Compile Include="Graph.cs" />
     <Compile Include="GraphNode.cs" />
-    <Compile Include="Helpers.cs" />
-    <Compile Include="IQueue.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

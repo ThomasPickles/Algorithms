@@ -6,19 +6,34 @@ using System.Threading.Tasks;
 
 namespace Algo
 {
-    class Queue : IQueue
+    public class Queue<T> where T : struct
     {
-        private Node<int> First;
-        private Node<int> Last;
+        private Node<T> front;
+        //private Node<object> last;
 
-        public void Add(int item)
+        // Add item to queue
+        public void Enqueue(T item)
         {
-            throw new NotImplementedException();
+            if(front == null)
+            {
+                front = new Node<T>(item);
+            }
+            else
+            {
+                front.AppendToTail(item);
+            }
+
         }
 
-        public int? Pop()
+        // Remove from queue
+        public T? Dequeue()
         {
-            throw new NotImplementedException();
+            if (front != null) {
+                var item = front.data;
+                front = front.next;
+                return item;
+            }
+            return null;
         }
     }
 }

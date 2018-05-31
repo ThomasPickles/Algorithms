@@ -6,30 +6,25 @@ using System.Threading.Tasks;
 
 namespace Algo
 {
-    public class Stack : IQueue
+    public class Stack<T> where T: struct
     {
-        private Node<int> top;
+        private Node<T> top;
 
-        public Stack(int d)
-        {
-            top = new Node<int>(d);
-        }
-
-        public void Add(int item)
+        public void Push(T item)
         {            
             var next = top;
-            top = new Node<int>(item);
+            top = new Node<T>(item);
             top.next = next;
         }
 
-        public int? Pop()
+        public T? Pop()
         {
             if (top != null)
             {
-                var lastIn = top;
+                var poppedItem = top;
                 top = top.Delete(top.data);
 
-                return lastIn.data;
+                return poppedItem.data;
             }
             return null;
         }

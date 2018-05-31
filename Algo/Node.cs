@@ -8,7 +8,7 @@ namespace Algo
 {
 
     // a change
-    public class Node<T> : object where T : struct
+    public class Node<T> where T : struct
     {
         public T data;
         public Node<T> next;

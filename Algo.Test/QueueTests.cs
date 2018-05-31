@@ -11,40 +11,40 @@ namespace Algo.Test
 {
 
     [TestClass]
-    public class StackTests
+    public class QueueTests
     {
 
         [TestMethod]
-        public void Stack_CreateStack_ShouldBeLIFO()
+        public void Queue_CreateStack_ShouldBeFIFO()
         {
             // Act
-            var stack = new Stack<int>();
-            stack.Push(1);
-            stack.Push(3);
-            stack.Push(5);
+            var queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(3);
+            queue.Enqueue(5);
 
             var list = new List<object>();
-            list.Add(stack.Pop());
-            list.Add(stack.Pop());
+            list.Add(queue.Dequeue());
+            list.Add(queue.Dequeue());
 
             // Assert
-            list.Should().Equal(5,3);
+            list.Should().Equal(1,3);
             
         }
 
         [TestMethod]
-        public void Stack_PopMultipleTimes_ShouldNotError()
+        public void Queue_PopMultipleTimes_ShouldNotError()
         {
             // Act
-            var stack = new Stack<int>();
+            var queue = new Queue<int>();
 
-            stack.Pop();
-            stack.Pop();
-            stack.Pop();
-            stack.Pop();
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Dequeue();
 
             // Assert
-            stack.Should().NotBeNull();
+            queue.Should().NotBeNull();
 
         }
 
